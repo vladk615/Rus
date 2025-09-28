@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #87CEEB, #B0E2FF); /* Градиент неба */
+    color: #333;
+    text-align: center;
+    overflow: hidden; /* Предотвращает появление полос прокрутки */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative; /*  Для позиционирования солнца и травы */
+    z-index: 1; /*  Чтобы контент был над фоном */
+}
+
+.flag {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s infinite alternate;
+}
+
+.flag div {
+    height: calc(200px / 3);
+}
+
+.flag .white {
+    background-color: white;
+}
+
+.flag .blue {
+    background-color: #0039A6;
+}
+
+.flag .red {
+    background-color: #D52B1E;
+}
+
+.anthem {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.anthem-line {
+    opacity: 0;
+    animation: fadeInLine 4s forwards;
+}
+
+.anthem-line:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.anthem-line:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.anthem-line:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.anthem-line:nth-child(4) {
+    animation-delay: 12s;
+}
+
+.anthem-line:nth-child(5) {
+    animation-delay: 16s;
+}
+
+.anthem-line:nth-child(6) {
+    animation-delay: 20s;
+}
+
+h1 {
+    color: #22457a;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Солнце */
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: #FFD700; /* Золотой цвет */
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow: 0 0 50px #FFD700;
+    animation: sunShine 5s infinite alternate;
+}
+
+/* Трава */
+.grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #32CD32; /*  Лаймовый цвет */
+    clip-path: polygon(0% 20%, 20% 0%, 40% 20%, 60% 0%, 80% 20%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Анимации */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeInLine {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sunShine {
+    0% {
+        box-shadow: 0 0 20px #FFD700;
+    }
+    100% {
+        box-shadow: 0 0 50px #FFD700;
+    }
+}
